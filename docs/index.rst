@@ -1,10 +1,32 @@
-Small and simple gravatar generator.
 
-Usage
-=====
+Welcome to Flask Gravatar's documentation!
+==========================================
 
-Initialize
+.. module:: flaskext.gravatar
+
+This is small and simple integration `gravatar`_ into `flask`_.
+
+.. _flask: http://flask.pocoo.org
+.. _gravatar: http://gravatar.com
+
+Installation
+------------
+
+Install the extension with one of the following commands:
+::
+
+    $ easy_install Flask-Gravatar
+
+or alternatively if you have pip installed:
+::
+
+    $ pip install Flask-Gravatar
+
+How to Use
 ----------
+
+Initialize with flask application and default parameters:
+::
 
     gravatar = Gravatar(app,
                         size=100,
@@ -13,27 +35,28 @@ Initialize
                         force_default=False,
                         force_lower=False)
 
-In template
------------
+Then in your template:
+::
 
-With default parameters:
-
-    {{ 'zzz.sochi@gmail' | gravatar }}
+    {{ 'zzz.sochi@gmail.com' | gravatar }}
 
 Bigger and adult:
+::
 
-    {{ 'zzz.sochi@gmail' | gravatar(size=200, default='x') }}
+    {{ 'zzz.sochi@gmail.com' | gravatar(size=200, rating='x') }}
 
 Patameters
-----------
+++++++++++
 
-All parameters described in http://gravatar.com/site/implement/images/.
+All parameters are described in `gravatar documentation`_.
+
+.. _gravatar documentation:  http://gravatar.com/site/implement/images
 
 
-API
----
+API Reference
+-------------
 
-.. class:: Gravatar(app, size=100, rating='g', default='retro', force_default=False, force_lower=False)
+.. class:: flaskext.gravatar.Gravatar(app, size=100, rating='g', default='retro', force_default=False, force_lower=False)
 
     Simple object for create gravatar link.
 
@@ -57,7 +80,7 @@ API
         :param email: Email for create link
         :param kw: Reload defaults
 
-    Default parameters. May runtime changed.
+    Default parameters. May change in runtime.
 
     .. attribute:: size
     .. attribute:: rating

@@ -1,6 +1,6 @@
 
-Welcome to Flask Gravatar's documentation!
-==========================================
+Flask Gravatar
+==============
 
 .. module:: flaskext.gravatar
 

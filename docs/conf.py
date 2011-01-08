@@ -91,7 +91,7 @@ exclude_patterns = ['_build']
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#html_theme = 'flask_small'
+html_theme = 'flask_small'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -99,7 +99,7 @@ exclude_patterns = ['_build']
 #html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
-#html_theme_path = ['_themes']
+html_theme_path = ['_themes']
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -166,8 +166,8 @@ exclude_patterns = ['_build']
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'FlaskGravatardoc'
 
-#html_theme_options = {
-#            'index_logo': 'logo.png',
-#            'github_fork':      'dcolish/flask-markdown',
-#            }
+html_theme_options = {
+            'index_logo': '',
+            'github_fork': 'zzzsochi/Flask-Gravatar',
+            }
 

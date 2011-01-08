@@ -22,12 +22,12 @@ class Gravatar(object):
 
     """
 
-    def __init__(self, app, size=100, rating='g' default="retro",
+    def __init__(self, app, size=100, rating='g', default='retro',
                  force_default=False, force_lower=False):
 
         self.size = size
         self.rating = rating
-        self.default = defult
+        self.default = default
         self.force_default = force_default
 
         app.jinja_env.filters.setdefault('gravatar', self)
