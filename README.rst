@@ -1,8 +1,6 @@
-
+==============
 Flask Gravatar
 ==============
-
-.. module:: flaskext.gravatar
 
 This is small and simple integration `gravatar`_ into `flask`_.
 
