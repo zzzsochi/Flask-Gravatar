@@ -43,7 +43,7 @@ Bigger and adult:
 
     {{ 'zzz.sochi@gmail.com' | gravatar(size=200, rating='x') }}
 
-Patameters
+Parameters
 ++++++++++
 
 All parameters are described in `gravatar documentation`_.
