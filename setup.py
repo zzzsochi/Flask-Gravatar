@@ -5,7 +5,7 @@ from distutils.core import setup
 
 setup(
         name = 'Flask-Gravatar',
-        version = '0.2.2',
+        version = '0.2.3',
         license='BSD',
         description = 'Small extension for Flask to make using Gravatar easy',
         long_description = open('README.rst').read(),
