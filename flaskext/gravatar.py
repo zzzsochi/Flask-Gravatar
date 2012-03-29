@@ -31,6 +31,7 @@ class Gravatar(object):
         self.rating = rating
         self.default = default
         self.force_default = force_default
+        self.force_lower = force_lower
         self.use_ssl = use_ssl
 
         app.jinja_env.filters.setdefault('gravatar', self)
@@ -62,9 +63,9 @@ class Gravatar(object):
             use_ssl = self.use_ssl
         
         if use_ssl:
-            url = 'https://gravatar.com/avatar/'
+            url = 'https://secure.gravatar.com/avatar/'
         else:
-            url = 'http://gravatar.com/avatar/'
+            url = 'http://www.gravatar.com/avatar/'
 
         hash = hashlib.md5(email).hexdigest()
 
