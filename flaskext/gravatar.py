@@ -24,7 +24,7 @@ class Gravatar(object):
     
     """
 
-    def __init__(self, app, size=100, rating='g', default='retro',
+    def __init__(self, app=None, size=100, rating='g', default='retro',
                  force_default=False, force_lower=False, use_ssl=False, **kwargs):
 
         self.size = size
