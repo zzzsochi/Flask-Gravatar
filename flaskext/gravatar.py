@@ -24,8 +24,8 @@ class Gravatar(object):
     
     """
 
-    def __init__(self, app, size=100, rating='g', default='retro',
-                 force_default=False, force_lower=False, use_ssl=False):
+    def __init__(self, app=None, size=100, rating='g', default='retro',
+                 force_default=False, force_lower=False, use_ssl=False, **kwargs):
 
         self.size = size
         self.rating = rating
@@ -34,7 +34,26 @@ class Gravatar(object):
         self.force_lower = force_lower
         self.use_ssl = use_ssl
 
+        if app is not None:
+            self.init_app(app, **kwargs)
+        else:
+            self.app = None
+
+    def init_app(self, app):
+        """Initializes the Flask-Gravata extension for the specified application.
+
+        :param app: The application.
+        """
+
+        if not hasattr(app, 'extensions'):
+            app.extensions = {}
+
+        if self.app is not None:
+            raise Exception('Flask-Gravatar is already associated with an application.')
+
+        self.app = app
         app.jinja_env.filters.setdefault('gravatar', self)
+        app.extensions['gravatar'] = self
 
     def __call__(self, email, size=None, rating=None, default=None,
                  force_default=None, force_lower=False, use_ssl=None):
