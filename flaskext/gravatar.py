@@ -48,7 +48,7 @@ class Gravatar(object):
         if not hasattr(app, 'extensions'):
             app.extensions = {}
 
-        if self.app is not None:
+        if hasattr(self, 'app'):
             raise Exception('Flask-Gravatar is already associated with an application.')
 
         self.app = app
