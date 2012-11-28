@@ -34,10 +34,10 @@ class Gravatar(object):
         self.force_lower = force_lower
         self.use_ssl = use_ssl
 
+        self.app = None
+
         if app is not None:
             self.init_app(app, **kwargs)
-        else:
-            self.app = None
 
     def init_app(self, app):
         """Initializes the Flask-Gravata extension for the specified application.
