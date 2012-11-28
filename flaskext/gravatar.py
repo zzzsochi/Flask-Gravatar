@@ -1,6 +1,7 @@
-# coding: utf-8
+# coding: utf8
 
 import hashlib
+
 
 class Gravatar(object):
     """Simple object for create gravatar link.
@@ -21,7 +22,6 @@ class Gravatar(object):
     :param force_default: Build only default avatars
     :param force_lower: Make email.lower() before build link
     :param use_ssl: Use https rather than http
-    
     """
 
     def __init__(self, app=None, size=100, rating='g', default='retro',
@@ -77,10 +77,10 @@ class Gravatar(object):
 
         if force_lower:
             email = email.lower()
-            
+
         if use_ssl is None:
             use_ssl = self.use_ssl
-        
+
         if use_ssl:
             url = 'https://secure.gravatar.com/avatar/'
         else:

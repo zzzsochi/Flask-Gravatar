@@ -1,20 +1,19 @@
-# coding: utf-8
+# coding: utf8
 
-from setuptools import setup
 from distutils.core import setup
 
 setup(
-        name = 'Flask-Gravatar',
-        version = '0.2.3',
+        name='Flask-Gravatar',
+        version='0.2.4',
         license='BSD',
-        description = 'Small extension for Flask to make using Gravatar easy',
-        long_description = open('README.rst').read(),
-        author = 'Zelenyak Aleksandr aka ZZZ',
-        author_email = 'zzz.sochi@gmail.com',
-        url = 'http://www.python.org/pypi/Flask-Gravatar/',
-        platforms = 'any',
+        description='Small extension for Flask to make using Gravatar easy',
+        long_description=open('README.rst').read(),
+        author='Zelenyak Aleksandr aka ZZZ',
+        author_email='zzz.sochi@gmail.com',
+        url='http://www.python.org/pypi/Flask-Gravatar/',
+        platforms='any',
 
-        classifiers = [
+        classifiers=[
             'Development Status :: 4 - Beta',
             'Environment :: Web Environment',
             'Intended Audience :: Developers',
@@ -25,11 +24,8 @@ setup(
             'Topic :: Software Development :: Libraries :: Python Modules'
         ],
 
-        install_requires = ['Flask'],
+        install_requires=['Flask'],
 
-        packages = ['flaskext'],
-        namespace_packages = ['flaskext'],
+        packages=['flaskext'],
+        namespace_packages=['flaskext'],
 )
-
-
-
