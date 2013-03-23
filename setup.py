@@ -4,17 +4,17 @@ from distutils.core import setup
 
 setup(
         name='Flask-Gravatar',
-        version='0.2.4',
+        version='0.3.0',
         license='BSD',
         description='Small extension for Flask to make using Gravatar easy',
         long_description=open('README.rst').read(),
         author='Zelenyak Aleksandr aka ZZZ',
         author_email='zzz.sochi@gmail.com',
-        url='http://www.python.org/pypi/Flask-Gravatar/',
+        url='https://github.com/zzzsochi/Flask-Gravatar/',
         platforms='any',
 
         classifiers=[
-            'Development Status :: 4 - Beta',
+            'Development Status :: 5 - Production/Stable',
             'Environment :: Web Environment',
             'Intended Audience :: Developers',
             'License :: OSI Approved :: BSD License',
