@@ -2,6 +2,17 @@
 
 import hashlib
 
+from flask import _request_ctx_stack
+
+try:
+    from flask import _app_ctx_stack
+except ImportError:
+    _app_ctx_stack = None
+
+
+# Which stack should we use? _app_ctx_stack is new in 0.9
+connection_stack = _app_ctx_stack or _request_ctx_stack
+
 
 class Gravatar(object):
     """Simple object for create gravatar link.
@@ -39,6 +50,20 @@ class Gravatar(object):
         if app is not None:
             self.init_app(app, **kwargs)
 
+    def get_app(self, reference_app=None):
+        """Helper method that implements the logic to look up an application.
+"""
+        if reference_app is not None:
+            return reference_app
+        if self.app is not None:
+            return self.app
+        ctx = connection_stack.top
+        if ctx is not None:
+            return ctx.app
+        raise RuntimeError('application not registered on Gravatar '
+                           'instance and no application bound '
+                           'to current context')
+
     def init_app(self, app):
         """Initializes the Flask-Gravata extension for the specified application.
 
@@ -48,10 +73,6 @@ class Gravatar(object):
         if not hasattr(app, 'extensions'):
             app.extensions = {}
 
-        if self.app is not None:
-            raise Exception('Flask-Gravatar is already associated with an application.')
-
-        self.app = app
         app.jinja_env.filters.setdefault('gravatar', self)
         app.extensions['gravatar'] = self
 
