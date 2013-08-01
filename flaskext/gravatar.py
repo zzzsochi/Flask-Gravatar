@@ -22,7 +22,8 @@ class Gravatar(object):
                             default='retro',
                             force_default=False,
                             force_lower=False,
-                            use_ssl=False
+                            use_ssl=False,
+                            base_url=None
                            )
 
     :param app: Your Flask app instance
@@ -32,10 +33,12 @@ class Gravatar(object):
     :param force_default: Build only default avatars
     :param force_lower: Make email.lower() before build link
     :param use_ssl: Use https rather than http
+    :param base_url: Use custom base url for build link
     """
 
     def __init__(self, app=None, size=100, rating='g', default='retro',
-                 force_default=False, force_lower=False, use_ssl=False, **kwargs):
+                 force_default=False, force_lower=False, use_ssl=False,
+                 base_url=None, **kwargs):
 
         self.size = size
         self.rating = rating
@@ -43,6 +46,7 @@ class Gravatar(object):
         self.force_default = force_default
         self.force_lower = force_lower
         self.use_ssl = use_ssl
+        self.base_url = base_url
 
         self.app = None
 
@@ -80,7 +84,8 @@ class Gravatar(object):
         app.extensions['gravatar'] = self
 
     def __call__(self, email, size=None, rating=None, default=None,
-                 force_default=None, force_lower=False, use_ssl=None):
+                 force_default=None, force_lower=False, use_ssl=None,
+                 base_url=None):
 
         """Build gravatar link."""
 
@@ -105,10 +110,16 @@ class Gravatar(object):
         if use_ssl is None:
             use_ssl = self.use_ssl
 
-        if use_ssl:
-            url = 'https://secure.gravatar.com/avatar/'
+        if base_url is None:
+            base_url = self.base_url
+
+        if base_url is not None:
+            url = base_url + 'avatar/'
         else:
-            url = 'http://www.gravatar.com/avatar/'
+            if use_ssl:
+                url = 'https://secure.gravatar.com/avatar/'
+            else:
+                url = 'http://www.gravatar.com/avatar/'
 
         hash = hashlib.md5(email).hexdigest()
 
