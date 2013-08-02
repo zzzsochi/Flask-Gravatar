@@ -31,7 +31,9 @@ Initialize with flask application and default parameters:
                         rating='g',
                         default='retro',
                         force_default=False,
-                        force_lower=False)
+                        force_lower=False,
+                        use_ssl=False,
+                        base_url=None)
 
 Then in your template:
 ::
