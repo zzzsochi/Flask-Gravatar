@@ -1,6 +1,10 @@
 Flask-Garavatar Changelog
 =========================
 
+0.4.0 2013-08-09
+* Add custom url support (pull #7)
+* Use setuptools (pull #6)
+
 0.3.0 2013-03-23
 * Enable registering multiple times in one process
 

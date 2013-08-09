@@ -31,7 +31,6 @@ Initialize with flask application and default parameters:
                         rating='g',
                         default='retro',
                         force_default=False,
-                        force_lower=False,
                         use_ssl=False,
                         base_url=None)
 
@@ -55,6 +54,13 @@ All parameters are described in `gravatar documentation`_.
 
 Changelog
 ---------
+
+0.4.0 2013-08-09
+~~~~~~~~~~~~~~~~
+
+* Add custom url support (pull #7)
+* Use setuptools (pull #6)
+
 
 0.3.0 2013-03-23
 ~~~~~~~~~~~~~~~~
