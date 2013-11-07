@@ -121,7 +121,7 @@ class Gravatar(object):
             else:
                 url = 'http://www.gravatar.com/avatar/'
 
-        hash = hashlib.md5(email).hexdigest()
+        hash = hashlib.md5(email.encode('utf-8')).hexdigest()
 
         link = '{url}{hash}'\
                '?s={size}&d={default}&r={rating}'.format(**locals())
