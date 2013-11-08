@@ -8,7 +8,7 @@ setup(
         license='BSD',
         description='Small extension for Flask to make using Gravatar easy',
         long_description=open('README.rst').read(),
-        author='Zelenyak Aleksandr aka ZZZ',
+        author='Alexander Zelenyak aka ZZZ',
         author_email='zzz.sochi@gmail.com',
         url='https://github.com/zzzsochi/Flask-Gravatar/',
         platforms='any',
@@ -20,6 +20,7 @@ setup(
             'License :: OSI Approved :: BSD License',
             'Operating System :: OS Independent',
             'Programming Language :: Python :: 2',
+            'Programming Language :: Python :: 3',
             'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
             'Topic :: Software Development :: Libraries :: Python Modules'
         ],
