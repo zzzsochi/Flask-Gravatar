@@ -55,6 +55,12 @@ All parameters are described in `gravatar documentation`_.
 Changelog
 ---------
 
+0.4.1 2013-11-07
+~~~~~~~~~~~~~~~~
+
+* Python 3 support (pull #9)
+
+
 0.4.0 2013-08-09
 ~~~~~~~~~~~~~~~~
 
