@@ -27,6 +27,6 @@ setup(
 
         install_requires=['Flask'],
 
-        packages=['flaskext'],
-        namespace_packages=['flaskext'],
+        packages=['flask_gravatar'],
+        namespace_packages=['flask_gravatar'],
 )
