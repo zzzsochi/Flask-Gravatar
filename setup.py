@@ -3,14 +3,14 @@
 from setuptools import setup
 
 setup(
-        name='Flask-Gravatar',
-        version='0.4.1',
-        license='BSD',
-        description='Small extension for Flask to make using Gravatar easy',
-        long_description=open('README.rst').read(),
-        author='Alexander Zelenyak aka ZZZ',
-        author_email='zzz.sochi@gmail.com',
-        url='https://github.com/zzzsochi/Flask-Gravatar/',
+    name='Flask-Gravatar',
+    version='0.4.1',
+    license='BSD',
+    description='Small extension for Flask to make using Gravatar easy',
+    long_description=open('README.rst').read(),
+    author='Alexander Zelenyak aka ZZZ',
+    author_email='zzz.sochi@gmail.com',
+    url='https://github.com/zzzsochi/Flask-Gravatar/',
         platforms='any',
 
         classifiers=[
@@ -25,8 +25,7 @@ setup(
             'Topic :: Software Development :: Libraries :: Python Modules'
         ],
 
-        install_requires=['Flask'],
+    install_requires=['Flask'],
 
-        packages=['flask_gravatar'],
-        namespace_packages=['flask_gravatar'],
+    packages=['flask_gravatar'],
 )
