@@ -72,7 +72,7 @@ class Gravatar(object):
                            ' to current context')
 
     def init_app(self, app):
-        """Initializes the Flask-Gravata extension for the specified application.
+        """Initializes the Flask-Gravatar extension for the specified application.
 
         :param app: The application.
         """
