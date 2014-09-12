@@ -2,7 +2,7 @@
 
 import hashlib
 
-from flask import _request_ctx_stack
+from flask import _request_ctx_stack, request
 
 try:
     from flask import _app_ctx_stack
@@ -37,7 +37,7 @@ class Gravatar(object):
     """
 
     def __init__(self, app=None, size=100, rating='g', default='retro',
-                 force_default=False, force_lower=False, use_ssl=False,
+                 force_default=False, force_lower=False, use_ssl=None,
                  base_url=None, **kwargs):
 
         self.size = size
@@ -109,6 +109,9 @@ class Gravatar(object):
 
         if use_ssl is None:
             use_ssl = self.use_ssl
+
+        if use_ssl is None:
+            use_ssl = (request.headers.get('X-Forwarded-Proto', request.scheme) == 'https')
 
         if base_url is None:
             base_url = self.base_url
