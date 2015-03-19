@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='Flask-Gravatar',
-    version='0.4.1',
+    version='0.4.2',
     license='BSD',
     description='Small extension for Flask to make using Gravatar easy',
     long_description=open('README.rst').read(),
