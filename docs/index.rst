@@ -2,7 +2,7 @@
 Welcome to Flask Gravatar's documentation!
 ==========================================
 
-.. module:: flaskext.gravatar
+.. module:: flask_gravatar
 
 This is small and simple integration `gravatar`_ into `flask`_.
 
@@ -58,7 +58,7 @@ All parameters are described in `gravatar documentation`_.
 API Reference
 -------------
 
-.. class:: flaskext.gravatar.Gravatar(app, size=100, rating='g', default='retro', force_default=False, force_lower=False)
+.. class:: flask_gravatar.Gravatar(app, size=100, rating='g', default='retro', force_default=False, force_lower=False)
 
     Simple object for create gravatar link.
 
@@ -93,6 +93,12 @@ API Reference
 
 Changelog
 ---------
+
+0.4.2 2015-03-19
+~~~~~~~~~~~~~~~~
+* Set use_ssl default value according to request protocol. (pull #14)
+* Documentation typo fixes. (pull #13)
+* Migrate from flaskext.gravatar to flask_gravatar. (pull #11 #12)
 
 0.4.1 2013-11-07
 ~~~~~~~~~~~~~~~~
