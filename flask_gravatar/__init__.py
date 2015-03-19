@@ -1,5 +1,7 @@
 # coding: utf8
 
+"""Small extension for Flask to make using Gravatar easy."""
+
 import hashlib
 
 from flask import _request_ctx_stack, request
@@ -14,7 +16,10 @@ connection_stack = _app_ctx_stack or _request_ctx_stack
 
 
 class Gravatar(object):
-    """Simple object for create gravatar link.
+
+    """Simple object for gravatar link creation.
+
+    .. code-block:: python
 
         gravatar = Gravatar(app,
                             size=100,
@@ -25,21 +30,22 @@ class Gravatar(object):
                             use_ssl=False,
                             base_url=None
                            )
-
-    :param app: Your Flask app instance
-    :param size: Default size for avatar
-    :param rating: Default rating
-    :param default: Default type for unregistred emails
-    :param force_default: Build only default avatars
-    :param force_lower: Make email.lower() before build link
-    :param use_ssl: Use https rather than http
-    :param base_url: Use custom base url for build link
     """
 
     def __init__(self, app=None, size=100, rating='g', default='retro',
                  force_default=False, force_lower=False, use_ssl=None,
                  base_url=None, **kwargs):
+        """Initialize the Flask-Gravatar extension.
 
+        :param app: Your Flask app instance
+        :param size: Default size for avatar
+        :param rating: Default rating
+        :param default: Default type for unregistred emails
+        :param force_default: Build only default avatars
+        :param force_lower: Make email.lower() before build link
+        :param use_ssl: Use https rather than http
+        :param base_url: Use custom base url for build link
+        """
         self.size = size
         self.rating = rating
         self.default = default
@@ -54,8 +60,7 @@ class Gravatar(object):
             self.init_app(app, **kwargs)
 
     def get_app(self, reference_app=None):
-        """Helper method that implements the logic to look up an application."""
-
+        """Helper method that implements an application look up."""
         if reference_app is not None:
             return reference_app
 
@@ -72,11 +77,10 @@ class Gravatar(object):
                            ' to current context')
 
     def init_app(self, app):
-        """Initializes the Flask-Gravatar extension for the specified application.
+        """Initialize the Flask-Gravatar extension for the specified application.
 
         :param app: The application.
         """
-
         if not hasattr(app, 'extensions'):
             app.extensions = {}
 
@@ -86,9 +90,7 @@ class Gravatar(object):
     def __call__(self, email, size=None, rating=None, default=None,
                  force_default=None, force_lower=False, use_ssl=None,
                  base_url=None):
-
         """Build gravatar link."""
-
         if size is None:
             size = self.size
 
@@ -111,7 +113,8 @@ class Gravatar(object):
             use_ssl = self.use_ssl
 
         if use_ssl is None:
-            use_ssl = (request.headers.get('X-Forwarded-Proto', request.scheme) == 'https')
+            use_ssl = request.headers.get('X-Forwarded-Proto',
+                                          request.scheme) == 'https'
 
         if base_url is None:
             base_url = self.base_url

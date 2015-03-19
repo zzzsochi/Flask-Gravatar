@@ -52,40 +52,4 @@ All parameters are described in `gravatar documentation`_.
 .. _gravatar documentation:  http://gravatar.com/site/implement/images
 
 
-Changelog
----------
-
-0.4.1 2013-11-07
-~~~~~~~~~~~~~~~~
-
-* Python 3 support (pull #9)
-
-
-0.4.0 2013-08-09
-~~~~~~~~~~~~~~~~
-
-* Add custom url support (pull #7)
-* Use setuptools (pull #6)
-
-
-0.3.0 2013-03-23
-~~~~~~~~~~~~~~~~
-
-* Enable registering multiple times in one process
-
-0.2.4 2012-11-28
-~~~~~~~~~~~~~~~~
-
-* Add init_app method
-* Some bugs fixes
-
-0.2.3 2011-11-29
-~~~~~~~~~~~~~~~~
-
-* Add HTTPS suppport
-
-0.2.2 2011-01-10
-~~~~~~~~~~~~~~~~
-
-* First public release
-* It's work
+.. include:: ../CHANGELOG
