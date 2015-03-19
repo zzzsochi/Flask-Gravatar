@@ -1,4 +1,3 @@
-
 Welcome to Flask Gravatar's documentation!
 ==========================================
 
@@ -65,7 +64,8 @@ API Reference
     :param app: Your Flask app instance
     :type app: flask.Flask
     :param size: Default size for avatar
-    :type size: int or str
+    :type size: int
+    :type size: str
     :param rating: Default rating
     :type rating: str
     :param default: Default type for unregistred emails
@@ -75,7 +75,7 @@ API Reference
     :param force_lower: Make email.lower() before build link
     :type force_lower: bool
 
-    .. method:: __call__(email, **kw)
+    .. method:: __call__(email, \*\*kw)
 
         Build gravatar link.
 
@@ -91,46 +91,4 @@ API Reference
     .. attribute:: force_lower
 
 
-Changelog
----------
-
-0.4.2 2015-03-19
-~~~~~~~~~~~~~~~~
-* Set use_ssl default value according to request protocol. (pull #14)
-* Documentation typo fixes. (pull #13)
-* Migrate from flaskext.gravatar to flask_gravatar. (pull #11 #12)
-
-0.4.1 2013-11-07
-~~~~~~~~~~~~~~~~
-
-* Python 3 support (pull #9)
-
-
-0.4.0 2013-08-09
-~~~~~~~~~~~~~~~~
-
-* Add custom url support (pull #7)
-* Use setuptools (pull #6)
-
-0.3.0 2013-03-23
-~~~~~~~~~~~~~~~~
-
-* Enable registering multiple times in one process
-
-0.2.4 2012-11-28
-~~~~~~~~~~~~~~~~
-
-* Add init_app method
-* Some bugs fixes
-
-0.2.3 2011-11-29
-~~~~~~~~~~~~~~~~
-
-* Add HTTPS suppport
-
-0.2.2 2011-01-10
-~~~~~~~~~~~~~~~~
-
-* First public release
-* It's work
-
+.. include:: ../CHANGELOG

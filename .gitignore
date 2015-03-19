@@ -1,8 +1,10 @@
-
 *.pyc
 *.pyo
 
+.cache
+.coverage
+
 Flask_Gravatar.egg-info/
 dist/
+docs/_build/
 docs/html/
-
