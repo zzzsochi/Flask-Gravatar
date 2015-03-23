@@ -1,8 +1,19 @@
+# -*- coding: utf-8 -*-
+#
+# This file is part of Flask-Gravatar
+# Copyright (C) 2015 CERN.
+#
+# Flask-Gravatar is free software; you can redistribute it and/or modify
+# it under the terms of the Revised BSD License; see LICENSE file for
+# more details.
 
-include setup.cfg
-include README.rst
+include LICENSE AUTHORS CHANGES *.rst
+include .coveragerc run-tests.sh pytest.ini tox.ini
+include docs/*.rst docs/*.py docs/Makefile
 
-recursive-include docs *
+recursive-include docs/_themes *.py *.css *.css_t *.conf *.html LICENSE README
+recursive-include docs/_templates *.html
+recursive-include tests *.py
+
 recursive-exclude docs *.pyc *.pyo .DS_Store
-prune docs/html
-
+prune docs/_build

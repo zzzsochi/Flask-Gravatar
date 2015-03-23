@@ -1,31 +1,65 @@
-Welcome to Flask Gravatar's documentation!
-==========================================
+================
+ Flask-Gravatar
+================
 
-.. module:: flask_gravatar
+.. currentmodule:: flask_gravatar
+
+.. raw:: html
+
+    <p style="height:22px; margin:0 0 0 2em; float:right">
+        <a href="https://travis-ci.org/zzzsochi/flask-gravatar">
+            <img src="https://travis-ci.org/zzzsochi/flask-gravatar.png?branch=master"
+                 alt="travis-ci badge"/>
+        </a>
+        <a href="https://coveralls.io/r/zzzsochi/flask-gravatar">
+            <img src="https://coveralls.io/repos/zzzsochi/flask-gravatar/badge.png?branch=master"
+                 alt="coveralls.io badge"/>
+        </a>
+    </p>
 
 This is small and simple integration `gravatar`_ into `flask`_.
 
 .. _flask: http://flask.pocoo.org
 .. _gravatar: http://gravatar.com
 
+Contents
+--------
+
+.. contents::
+   :local:
+   :depth: 1
+   :backlinks: none
+
+
+.. _installation:
+
 Installation
-------------
+============
 
-Install the extension with one of the following commands:
-::
+Flask-Gravatar is on PyPI so all you need is:
 
-    $ easy_install Flask-Gravatar
-
-or alternatively if you have pip installed:
-::
+.. code-block:: console
 
     $ pip install Flask-Gravatar
 
-How to Use
-----------
+The development version can be downloaded from `its page at GitHub
+<http://github.com/zzzsochi/flask-gravatar>`_.
+
+.. code-block:: console
+
+    $ git clone https://github.com/zzzsochi/flask-gravatar.git
+    $ cd flask-gravatar
+    $ python setup.py develop
+    $ ./run-tests.sh
+
+.. _usage:
+
+Usage
+=====
 
 Initialize with flask application and default parameters:
-::
+
+.. code-block:: python
 
     gravatar = Gravatar(app,
                         size=100,
@@ -37,25 +71,28 @@ Initialize with flask application and default parameters:
                         base_url=None)
 
 Then in your template:
-::
+
+.. code-block:: jinja
 
     {{ 'zzz.sochi@gmail.com' | gravatar }}
 
 Bigger and adult:
-::
+
+.. code-block:: jinja
 
     {{ 'zzz.sochi@gmail.com' | gravatar(size=200, rating='x') }}
 
 Parameters
-~~~~~~~~~~
+----------
 
 All parameters are described in `gravatar documentation`_.
 
 .. _gravatar documentation:  http://gravatar.com/site/implement/images
 
+.. _api:
 
-API Reference
--------------
+API
+===
 
 .. class:: flask_gravatar.Gravatar(app, size=100, rating='g', default='retro', force_default=False, force_lower=False)
 
@@ -91,4 +128,13 @@ API Reference
     .. attribute:: force_lower
 
 
-.. include:: ../CHANGELOG
+.. include:: ../CHANGES
+
+.. include:: ../CONTRIBUTING.rst
+
+License
+=======
+
+.. include:: ../LICENSE
+
+.. include:: ../AUTHORS

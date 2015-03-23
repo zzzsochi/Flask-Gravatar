@@ -1,6 +1,18 @@
-==============
-Flask Gravatar
-==============
+================
+ Flask Gravatar
+================
+
+.. image:: https://travis-ci.org/zzzsochi/flask-gravatar.png?branch=master
+    :target: https://travis-ci.org/zzzsochi/flask-gravatar
+.. image:: https://coveralls.io/repos/zzzsochi/flask-gravatar/badge.png?branch=master
+    :target: https://coveralls.io/r/zzzsochi/flask-gravatar
+.. image:: https://pypip.in/v/Flask-Gravatar/badge.png
+    :target: https://pypi.python.org/pypi/Flask-Gravatar/
+.. image:: https://pypip.in/d/Flask-Gravatar/badge.png
+    :target: https://pypi.python.org/pypi/Flask-Gravatar/
+
+About
+=====
 
 This is small and simple integration `gravatar`_ into `flask`_.
 
@@ -8,23 +20,16 @@ This is small and simple integration `gravatar`_ into `flask`_.
 .. _gravatar: http://gravatar.com
 
 Installation
-------------
+============
 
-Install the extension with one of the following commands:
-::
+Flask-Gravatar is on PyPI so all you need is: ::
 
-    $ easy_install Flask-Gravatar
+    pip install Flask-Gravatar
 
-or alternatively if you have pip installed:
-::
+Documentation
+=============
 
-    $ pip install Flask-Gravatar
-
-How to Use
-----------
-
-Initialize with flask application and default parameters:
-::
+Initialize with flask application and default parameters: ::
 
     gravatar = Gravatar(app,
                         size=100,
@@ -34,22 +39,27 @@ Initialize with flask application and default parameters:
                         use_ssl=False,
                         base_url=None)
 
-Then in your template:
-::
+Then in your template: ::
 
     {{ 'zzz.sochi@gmail.com' | gravatar }}
 
-Bigger and adult:
-::
+Bigger and adult: ::
 
     {{ 'zzz.sochi@gmail.com' | gravatar(size=200, rating='x') }}
 
 Parameters
-~~~~~~~~~~
+----------
 
 All parameters are described in `gravatar documentation`_.
 
 .. _gravatar documentation:  http://gravatar.com/site/implement/images
 
+Testing
+=======
+Running the test suite is as simple as: ::
 
-.. include:: ../CHANGELOG
+    python setup.py test
+
+or, to also show code coverage: ::
+
+    ./run-tests.sh
