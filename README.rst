@@ -2,13 +2,13 @@
  Flask Gravatar
 ================
 
-.. image:: https://travis-ci.org/zzzsochi/flask-gravatar.png?branch=master
-    :target: https://travis-ci.org/zzzsochi/flask-gravatar
-.. image:: https://coveralls.io/repos/zzzsochi/flask-gravatar/badge.png?branch=master
-    :target: https://coveralls.io/r/zzzsochi/flask-gravatar
-.. image:: https://pypip.in/v/Flask-Gravatar/badge.png
+.. image:: https://travis-ci.org/zzzsochi/Flask-Gravatar.svg?branch=master
+    :target: https://travis-ci.org/zzzsochi/Flask-Gravatar
+.. image:: https://coveralls.io/repos/zzzsochi/Flask-Gravatar/badge.svg?branch=master
+    :target: https://coveralls.io/r/zzzsochi/Flask-Gravatar?branch=master
+.. image:: https://pypip.in/v/Flask-Gravatar/badge.svg
     :target: https://pypi.python.org/pypi/Flask-Gravatar/
-.. image:: https://pypip.in/d/Flask-Gravatar/badge.png
+.. image:: https://pypip.in/d/Flask-Gravatar/badge.svg
     :target: https://pypi.python.org/pypi/Flask-Gravatar/
 
 About
