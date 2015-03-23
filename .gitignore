@@ -6,6 +6,7 @@
 .tox
 
 Flask_Gravatar.egg-info/
+build/
 dist/
 docs/_build/
 docs/html/

@@ -1,6 +1,6 @@
 # coding: utf8
 
-"""Small extension for Flask to make using Gravatar easy."""
+"""Small extension for Flask to make usage of Gravatar service easy."""
 
 import os
 import re
