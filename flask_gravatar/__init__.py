@@ -1,15 +1,27 @@
-# coding: utf8
+# -*- coding: utf-8 -*-
+#
+# This file is part of Flask-Gravatar
+# Copyright (C) 2014 Andrew Grigorev.
+# Copyright (C) 2014 Nauman Ahmad.
+# Copyright (C) 2014 Tom Powell.
+# Copyright (C) 2015 CERN.
+#
+# Flask-Gravatar is free software; you can redistribute it and/or modify
+# it under the terms of the Revised BSD License; see LICENSE file for
+# more details.
 
 """Small extension for Flask to make using Gravatar easy."""
 
 import hashlib
 
-from flask import _request_ctx_stack, request
+from flask import _request_ctx_stack, request, has_request_context
 
 try:
     from flask import _app_ctx_stack
-except ImportError:
+except ImportError:  # pragma: no cover
     _app_ctx_stack = None
+
+from .version import __version__
 
 # Which stack should we use? _app_ctx_stack is new in 0.9
 connection_stack = _app_ctx_stack or _request_ctx_stack
@@ -59,23 +71,6 @@ class Gravatar(object):
         if app is not None:
             self.init_app(app, **kwargs)
 
-    def get_app(self, reference_app=None):
-        """Helper method that implements an application look up."""
-        if reference_app is not None:
-            return reference_app
-
-        if self.app is not None:
-            return self.app
-
-        ctx = connection_stack.top
-
-        if ctx is not None:
-            return ctx.app
-
-        raise RuntimeError('Application not registered on Gravatar'
-                           ' instance and no application bound'
-                           ' to current context')
-
     def init_app(self, app):
         """Initialize the Flask-Gravatar extension for the specified application.
 
@@ -112,7 +107,7 @@ class Gravatar(object):
         if use_ssl is None:
             use_ssl = self.use_ssl
 
-        if use_ssl is None:
+        if use_ssl is None and has_request_context():
             use_ssl = request.headers.get('X-Forwarded-Proto',
                                           request.scheme) == 'https'
 
@@ -136,3 +131,5 @@ class Gravatar(object):
             link = link + '&f=y'
 
         return link
+
+__all__ = ('Gravatar', '__version__')

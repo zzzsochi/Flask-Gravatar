@@ -3,6 +3,7 @@
 
 .cache
 .coverage
+.tox
 
 Flask_Gravatar.egg-info/
 dist/
