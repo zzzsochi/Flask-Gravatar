@@ -12,7 +12,6 @@
 # serve to show the default.
 
 import os
-import re
 import sys
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -50,11 +49,12 @@ copyright = u'2011, Zelenyak Alexander'
 # built documents.
 #
 # Get the version string. Cannot be done with import!
-with open(os.path.join('..', 'flask_gravatar', 'version.py'), 'rt') as f:
-    version = re.search(
-        '__version__\s*=\s*"(?P<version>.*)"\n',
-        f.read()
-    ).group('version')
+g = {}
+with open(os.path.join(os.path.dirname(__file__), '..',
+                       'flask_gravatar', 'version.py'),
+          'rt') as fp:
+    exec(fp.read(), g)
+    version = g['__version__']
 
 # The full version, including alpha/beta/rc tags.
 release = version

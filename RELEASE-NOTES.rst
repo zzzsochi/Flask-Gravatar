@@ -24,7 +24,7 @@ Installation
 Documentation
 -------------
 
-   http://flask-gravatar.readthedocs.org/en/v0.4.2
+   http://flask-gravatar.readthedocs.io/en/v0.4.2
 
 Homepage
 --------

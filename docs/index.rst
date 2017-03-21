@@ -128,7 +128,7 @@ API
     .. attribute:: force_lower
 
 
-.. include:: ../CHANGES
+.. include:: ../CHANGES.rst
 
 .. include:: ../CONTRIBUTING.rst
 

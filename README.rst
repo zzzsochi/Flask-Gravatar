@@ -2,14 +2,20 @@
  Flask Gravatar
 ================
 
-.. image:: https://travis-ci.org/zzzsochi/Flask-Gravatar.svg?branch=master
-    :target: https://travis-ci.org/zzzsochi/Flask-Gravatar
-.. image:: https://coveralls.io/repos/zzzsochi/Flask-Gravatar/badge.svg?branch=master
-    :target: https://coveralls.io/r/zzzsochi/Flask-Gravatar?branch=master
-.. image:: https://pypip.in/v/Flask-Gravatar/badge.svg
-    :target: https://pypi.python.org/pypi/Flask-Gravatar/
-.. image:: https://pypip.in/d/Flask-Gravatar/badge.svg
-    :target: https://pypi.python.org/pypi/Flask-Gravatar/
+.. image:: https://img.shields.io/travis/zzzsochi/Flask-Gravatar.svg
+        :target: https://travis-ci.org/zzzsochi/Flask-Gravatar
+
+.. image:: https://img.shields.io/coveralls/zzzsochi/Flask-Gravatar.svg
+        :target: https://coveralls.io/r/zzzsochi/Flask-Gravatar
+
+.. image:: https://img.shields.io/github/tag/zzzsochi/Flask-Gravatar.svg
+        :target: https://github.com/zzzsochi/Flask-Gravatar/releases
+
+.. image:: https://img.shields.io/pypi/dm/Flask-Gravatar.svg
+        :target: https://pypi.python.org/pypi/Flask-Gravatar
+
+.. image:: https://img.shields.io/github/license/zzzsochi/Flask-Gravatar.svg
+        :target: https://github.com/zzzsochi/Flask-Gravatar/blob/master/LICENSE
 
 About
 =====
