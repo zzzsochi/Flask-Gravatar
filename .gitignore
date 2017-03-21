@@ -3,6 +3,7 @@
 
 .cache
 .coverage
+.eggs
 .tox
 
 Flask_Gravatar.egg-info/
