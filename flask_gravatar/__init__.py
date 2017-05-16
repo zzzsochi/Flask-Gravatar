@@ -5,6 +5,7 @@
 # Copyright (C) 2014 Nauman Ahmad.
 # Copyright (C) 2014 Tom Powell.
 # Copyright (C) 2015 CERN.
+# Copyright (C) 2017 Jiri Kuncar.
 #
 # Flask-Gravatar is free software; you can redistribute it and/or modify
 # it under the terms of the Revised BSD License; see LICENSE file for
@@ -14,17 +15,38 @@
 
 import hashlib
 
-from flask import _request_ctx_stack, request, has_request_context
-
-try:
-    from flask import _app_ctx_stack
-except ImportError:  # pragma: no cover
-    _app_ctx_stack = None
+from flask import _request_ctx_stack, current_app, has_request_context, request
 
 from .version import __version__
 
+try:
+    from flask import _app_ctx_stack, has_app_context
+except ImportError:  # pragma: no cover
+    _app_ctx_stack = None
+    has_app_context = None
+
+
 # Which stack should we use? _app_ctx_stack is new in 0.9
 connection_stack = _app_ctx_stack or _request_ctx_stack
+has_context = has_app_context or has_request_context
+
+
+class Property(object):
+    """A property descriptor that sets and returns values."""
+
+    def __init__(self, default, key=None):
+        self.default = default
+        self.key = key
+
+    def __get__(self, obj, objtype):
+        """Return value from application config, instance value or default."""
+        if self.key and has_context() and self.key in current_app.config:
+            return current_app.config[self.key]
+        return getattr(obj, self.key, self.default)
+
+    def __set__(self, obj, val):
+        """Set instance value."""
+        setattr(obj, self.key, val)
 
 
 class Gravatar(object):
@@ -44,9 +66,15 @@ class Gravatar(object):
                            )
     """
 
-    def __init__(self, app=None, size=100, rating='g', default='retro',
-                 force_default=False, force_lower=False, use_ssl=None,
-                 base_url=None, **kwargs):
+    size = Property(100, key='GRAVATAR_SIZE')
+    rating = Property('g', key='GRAVATAR_RATING')
+    default = Property('retro', key='GRAVATAR_DEFAULT')
+    force_default = Property(False, key='GRAVATAR_FORCE_DEFAULT')
+    force_lower = Property(False, key='GRAVATAR_FORCE_LOWER')
+    use_ssl = Property(None, key='GRAVATAR_USE_SSL')
+    base_url = Property(None, key='GRAVATAR_BASE_URL')
+
+    def __init__(self, app=None, **kwargs):
         """Initialize the Flask-Gravatar extension.
 
         :param app: Your Flask app instance
@@ -58,13 +86,9 @@ class Gravatar(object):
         :param use_ssl: Use https rather than http
         :param base_url: Use custom base url for build link
         """
-        self.size = size
-        self.rating = rating
-        self.default = default
-        self.force_default = force_default
-        self.force_lower = force_lower
-        self.use_ssl = use_ssl
-        self.base_url = base_url
+        for key in tuple(kwargs.keys()):
+            if hasattr(self, key):
+                setattr(self, key, kwargs.pop(key))
 
         self.app = None
 

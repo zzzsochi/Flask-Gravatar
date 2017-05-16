@@ -70,6 +70,11 @@ Initialize with flask application and default parameters:
                         use_ssl=False,
                         base_url=None)
 
+Alternatively, the default parameters can be read from the application
+config values in `GRAVATAR_SIZE`, `GRAVATAR_RATING`, `GRAVATAR_DEFAULT`,
+`GRAVATAR_FORCE_DEFAULT`, `GRAVATAR_FORCE_LOWER`, `GRAVATAR_USE_SSL`,
+and `GRAVATAR_BASE_URL`.
+
 Then in your template:
 
 .. code-block:: jinja

@@ -85,3 +85,15 @@ class TestGravatar(FlaskTestCase):
         gravatar = Gravatar(self.app, force_lower=True)
         assert gravatar('email@example.com') == gravatar('Email@EXAMPLE.com',
                                                          force_lower=None)
+
+    def test_app_config(self):
+        gravatar = Gravatar(self.app, size=200)
+        assert gravatar.size == 200
+        g200 = gravatar('email@example.com')
+
+        self.app.config['GRAVATAR_SIZE'] = 300
+        with self.app.app_context():
+            # use application config value
+            assert gravatar.size == 300
+            # allow runtime override
+            assert g200 == gravatar('email@example.com', size=200)
