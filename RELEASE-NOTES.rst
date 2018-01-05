@@ -1,8 +1,8 @@
 ===================================
- Flask-Gravatar v0.4.2 is released
+ Flask-Gravatar v0.5.0 is released
 ===================================
 
-Flask-Gravatar v0.4.2 was released on March 23, 2015.
+Flask-Gravatar v0.5.0 was released on January 5, 2018.
 
 About
 -----
@@ -12,19 +12,21 @@ Small extension for Flask to make usage of Gravatar service easy.
 What's new
 ----------
 
-- Set use_ssl default value according to request protocol. (pull #14)
-- Improved documentation typo fixes. (pull #13 #18)
-- Migration from flaskext.gravatar to flask_gravatar. (pull #11 #12)
+- Try to read configuration values from application config if a context
+  is available otherwise return an instance config or extension default.
+  (pull #23)
+- Package refresh - testing Python 3.6, fixed links, and much more.
+  (pull #22)
 
 Installation
 ------------
 
-   $ pip install Flask-Gravatar
+   $ pip install Flask-Gravatar==0.5.0
 
 Documentation
 -------------
 
-   http://flask-gravatar.readthedocs.io/en/v0.4.2
+   http://flask-gravatar.readthedocs.io/en/v0.5.0
 
 Homepage
 --------

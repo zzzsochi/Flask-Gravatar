@@ -1,6 +1,14 @@
 Changes
 =======
 
+Version 0.5.0 (released 2018-01-05)
+
+- Try to read configuration values from application config if a context
+  is available otherwise return an instance config or extension default.
+  (pull #23)
+- Package refresh - testing Python 3.6, fixed links, and much more.
+  (pull #22)
+
 Version 0.4.2 (released 2015-03-23)
 
 - Set use_ssl default value according to request protocol. (pull #14)
