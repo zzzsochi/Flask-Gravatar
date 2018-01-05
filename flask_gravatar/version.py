@@ -2,6 +2,9 @@
 #
 # This file is part of Flask-Gravatar
 # Copyright (C) 2015 CERN.
+# Copyright (C) 2018 Swiss Data Science Center (SDSC)
+# A partnership between École Polytechnique Fédérale de Lausanne (EPFL) and
+# Eidgenössische Technische Hochschule Zürich (ETHZ).
 #
 # Flask-Gravatar is free software; you can redistribute it and/or modify
 # it under the terms of the Revised BSD License; see LICENSE file for
@@ -16,4 +19,4 @@ This file is imported by ``flask_gravatar.__init__``, and parsed by
 # Do not change the format of this next line. Doing so risks breaking
 # setup.py and docs/conf.py
 
-__version__ = "0.4.3.dev20150324"
+__version__ = "0.5.0"

@@ -54,6 +54,7 @@ after_success:
 
 deploy:
   provider: pypi
+  skip_cleanup: true
   user: jirikuncar
   password:
     secure: RraR7dpFd+tLVdXSnjduDypCCSoqJ1Uj/zYUU2P8d9wW0EXOaNJ92OzBNDCzQmOxmkmWx793+GZWvjM28dXm+tsom7dWlYDApuWBRc9DBedM6n+/O0wtSRBU50F8Rwvi5IDThHaaY4c/9UTxZC1L7EOjQlvDxohAOmAxkmf0HWo=
