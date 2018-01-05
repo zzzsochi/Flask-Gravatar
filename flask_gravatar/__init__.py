@@ -6,6 +6,9 @@
 # Copyright (C) 2014 Tom Powell.
 # Copyright (C) 2015 CERN.
 # Copyright (C) 2017 Jiri Kuncar.
+# Copyright (C) 2018 Swiss Data Science Center (SDSC)
+# A partnership between École Polytechnique Fédérale de Lausanne (EPFL) and
+# Eidgenössische Technische Hochschule Zürich (ETHZ).
 #
 # Flask-Gravatar is free software; you can redistribute it and/or modify
 # it under the terms of the Revised BSD License; see LICENSE file for
@@ -50,7 +53,6 @@ class Property(object):
 
 
 class Gravatar(object):
-
     """Simple object for gravatar link creation.
 
     .. code-block:: python
