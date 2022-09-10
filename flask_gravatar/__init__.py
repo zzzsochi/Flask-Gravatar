@@ -82,7 +82,7 @@ class Gravatar(object):
         :param app: Your Flask app instance
         :param size: Default size for avatar
         :param rating: Default rating
-        :param default: Default type for unregistred emails
+        :param default: Default type for unregistered emails
         :param force_default: Build only default avatars
         :param force_lower: Make email.lower() before build link
         :param use_ssl: Use https rather than http
