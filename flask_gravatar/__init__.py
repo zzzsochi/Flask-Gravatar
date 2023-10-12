@@ -18,19 +18,16 @@
 
 import hashlib
 
-from flask import _request_ctx_stack, current_app, has_request_context, request
+from flask import current_app, has_request_context, request
 
 from .version import __version__
 
 try:
-    from flask import _app_ctx_stack, has_app_context
+    from flask import has_app_context
 except ImportError:  # pragma: no cover
-    _app_ctx_stack = None
     has_app_context = None
 
 
-# Which stack should we use? _app_ctx_stack is new in 0.9
-connection_stack = _app_ctx_stack or _request_ctx_stack
 has_context = has_app_context or has_request_context
 
 
