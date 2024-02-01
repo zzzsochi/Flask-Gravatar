@@ -62,7 +62,7 @@ class Gravatar(object):
                             rating='g',
                             default='retro',
                             force_default=False,
-                            force_lower=False,
+                            force_lower=True,
                             use_ssl=False,
                             base_url=None
                            )
@@ -72,7 +72,7 @@ class Gravatar(object):
     rating = Property('g', key='GRAVATAR_RATING')
     default = Property('retro', key='GRAVATAR_DEFAULT')
     force_default = Property(False, key='GRAVATAR_FORCE_DEFAULT')
-    force_lower = Property(False, key='GRAVATAR_FORCE_LOWER')
+    force_lower = Property(True, key='GRAVATAR_FORCE_LOWER')
     use_ssl = Property(None, key='GRAVATAR_USE_SSL')
     base_url = Property(None, key='GRAVATAR_BASE_URL')
 
@@ -109,7 +109,7 @@ class Gravatar(object):
         app.extensions['gravatar'] = self
 
     def __call__(self, email, size=None, rating=None, default=None,
-                 force_default=None, force_lower=False, use_ssl=None,
+                 force_default=None, force_lower=True, use_ssl=None,
                  base_url=None):
         """Build gravatar link."""
         if size is None:
